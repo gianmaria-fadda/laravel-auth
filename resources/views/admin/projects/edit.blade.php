@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Crea il Progetto')
+@section('page-title', 'Modifica' .$project->title)
 
 @section('main-content')
     <div class="row">
@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center text-info">
-                        Crea il Progetti
+                        Modifica {{ $project->title }}
                     </h1>
                 </div>
             </div>
@@ -31,17 +31,18 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.projects.store') }}" method="POST">
+                    <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="POST">
                         @csrf
+                        @method('PUT')
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="titolo" id="titolo" required minlength="3" maxlength="255" placeholder="Inserisci qui il Titolo...">
+                            <input type="text" class="form-control" name="titolo" id="titolo" required minlength="3" maxlength="255" value="{{ old('title', $project->title) }}" placeholder="Inserisci qui il Titolo...">
                           </div>
 
                           <div class="mb-3">
                             <label for="content" class="form-label">Contenuto <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="content" id="content" rows="3" required minlength="3" maxlength="4096" placeholder="Inserisci qui il tuo Contenuto..."></textarea>
+                            <textarea class="form-control" name="content" id="content" rows="3" required minlength="3" maxlength="4096" value="{{ old('title', $project->content) }}" placeholder="Inserisci qui il tuo Contenuto..."></textarea>
                           </div>
 
                         

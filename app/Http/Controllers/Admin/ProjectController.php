@@ -65,7 +65,17 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        
+        $data = $request->validate([
+            'title' => 'required|min:3|max:255',
+            'content' => 'required|min:3|max:255'
+        ]);
+
+        $data['slug'] = str()->slug($data['title']);
+
+        $project->update($data);
+
+        return redirect()->route('admin.projects.show', ['project' => $project->id]);
     }
 
     /**
