@@ -7,13 +7,28 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="text-center text-success">
-                        Sei loggato!
+                    <h1 class="text-center text-info">
+                        Tutti i Progetti
                     </h1>
-                    <br>
-                    La dashboard è una pagina privata (protetta dal middleware)
                 </div>
             </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+              </table>
         </div>
     </div>
 @endsection
