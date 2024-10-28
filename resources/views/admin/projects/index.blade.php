@@ -16,18 +16,20 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Contenuto</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
+                    @foreach ($projects as $project)
+                        <tr>
+                            <th scope="row">{{ $project->id }}</th>
+                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->content }}</td>
+                        </tr>
+                        
+                    @endforeach
+                </tbody>
               </table>
         </div>
     </div>
