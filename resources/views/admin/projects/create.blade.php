@@ -23,12 +23,12 @@
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="titolo" id="titolo" required placeholder="Inserisci qui il Titolo...">
+                            <input type="text" class="form-control" name="titolo" id="titolo" required minlength="3" maxlength="255" placeholder="Inserisci qui il Titolo...">
                           </div>
 
                           <div class="mb-3">
                             <label for="content" class="form-label">Contenuto <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="content" id="content" rows="3" required placeholder="Inserisci qui il tuo Contenuto..."></textarea>
+                            <textarea class="form-control" name="content" id="content" rows="3" required minlength="3" maxlength="4096" placeholder="Inserisci qui il tuo Contenuto..."></textarea>
                           </div>
 
                         

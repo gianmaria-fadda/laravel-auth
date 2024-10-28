@@ -32,7 +32,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => 'required|min:3|max:255',
+            'content' => 'required|min:3|max:255'
+        ]);
 
         $data['slug'] = str()->slug($data['title']);
 
