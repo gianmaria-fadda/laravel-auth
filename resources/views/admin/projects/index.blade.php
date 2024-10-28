@@ -16,6 +16,13 @@
     </div>
     <div class="row">
         <div class="col">
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-success w-100">
+                + Aggiungi
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <div class="card">
                 <div class="card-body">
                     <table class="table">
